@@ -49,6 +49,5 @@ android {
 
 dependencies {
     implementation 'androidx.annotation:annotation:1.5.0'
-    // Use local AAR instead of remote dependency
-    implementation files('ffmpeg-kit.aar')
+    implementation project(':ffmpeg_kit_flutter')
 }
