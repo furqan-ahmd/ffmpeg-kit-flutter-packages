@@ -1,22 +1,13 @@
-buildscript {
-    repositories {
-        google()
-        mavenCentral()
-    }
-
-    dependencies {
-        classpath 'com.android.tools.build:gradle:8.1.0'
-    }
-}
-
-rootProject.allprojects {
-    repositories {
-        google()
-        mavenCentral()
-    }
-}
+// JitPack compatibility - remove buildscript from submodule
 
 apply plugin: 'com.android.library'
+apply plugin: 'com.github.dcendents.android-maven'
+
+repositories {
+    google()
+    mavenCentral()
+    maven { url 'https://jitpack.io' }
+}
 
 android {
     // Conditional for compatibility with AGP <4.2.
@@ -49,5 +40,5 @@ android {
 
 dependencies {
     implementation 'androidx.annotation:annotation:1.5.0'
-    implementation project(':ffmpeg_kit_flutter')
+    implementation 'com.github.furqan-ahmd.ffmpeg-kit-flutter-packages:aar-library:main-SNAPSHOT'
 }
